@@ -6,13 +6,15 @@ import tkinter
 import asyncio
 
 
-mainwindow = customtkinter.CTK()
+mainwindow = customtkinter.CTk()
+mainwindow.geometry("1920x1028")
 
-
+frame = customtkinter.CtkFrame(master=mainwindow)
+frame.pack(pady=1920, padx=60, fill="both", expand=True)
 
 
 #grabs deets for use later 
-async def login_engine():
+async def login_logic():
     #authenticatates silly goofy little api thingie with the user 
     twitch = await Twitch('o958o6q8up44t8d4xlkxfqxid4f5bi', 'b1iha1fx3awubleroyxsxnslid6b4y')
 
