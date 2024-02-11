@@ -17,7 +17,9 @@ frame.pack(pady=120, padx=120)
 frame.place(relx=0.5, rely=0.5, relwidth=0.5, relheight=1, anchor="c")
 authbutton = customtkinter.CTkButton(master=frame, text="Authenticate")
 authbutton.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-
+text = customtkinter.CTkFrame(master=mainwindow, fg_color="transparent")
+authmessage = customtkinter.CTkLabel(text, text = 'Please Authenticate to continue')
+authmessage.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
 mainwindow.mainloop()
 #grabs deets for use later 
