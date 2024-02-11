@@ -15,25 +15,21 @@ class Authenticatonwindow(customtkinter.CTkToplevel):
         self.label.pack(padx=20, pady=20)
 
 
-class App(customtkinter.CTk):
+class mainwindow(customtkinter.CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.geometry("500x400")
+        self.geometry("1920x1028")
         self.after(0, lambda:self.state('zoomed'))
-        self.title("Claire's Twitch interaction engine")
+        self.title("Claire's Twitch Interaction Engine")
+        self.toplevel_window = Authenticatonwindow(self)
 
 
         self.toplevel_window = None
 
-    def open_toplevel(self):
-        if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = Authenticatonwindow(self)  
-        else:
-            self.toplevel_window.focus()  
 
 
-app = App()
-app.mainloop()
+mainwindow = mainwindow()
+mainwindow.mainloop()
 
 #grabs deets for use later 
 async def login_engine():
