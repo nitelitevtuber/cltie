@@ -5,15 +5,19 @@ import customtkinter
 import tkinter
 import asyncio
 
-
+customtkinter.set_appearance_mode("dark")
 mainwindow = customtkinter.CTk()
 mainwindow.geometry("1920x1028")
 mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
+mainwindow.title("Claire's Twitch Interaction Engine")
 
-frame = customtkinter.CTkFrame(master=mainwindow)
-frame.pack(pady=1920, padx=1028, fill="both", expand=True)
-button1 = customtkinter.CTkButton(master=frame, text="Authenticate")
 
+frame = customtkinter.CTkFrame(master=mainwindow, fg_color="transparent")
+frame.pack(pady=120, padx=120)
+frame._set_appearance_mode("dark")
+
+authbutton = customtkinter.CTkButton(master=frame, text="Authenticate")
+authbutton.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
 
 mainwindow.mainloop()
