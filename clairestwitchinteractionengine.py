@@ -8,11 +8,15 @@ import asyncio
 
 mainwindow = customtkinter.CTk()
 mainwindow.geometry("1920x1028")
+mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
 
-frame = customtkinter.CtkFrame(master=mainwindow)
-frame.pack(pady=1920, padx=60, fill="both", expand=True)
+frame = customtkinter.CTkFrame(master=mainwindow)
+frame.pack(pady=1920, padx=1028, fill="both", expand=True)
+button1 = customtkinter.CTkButton(master=frame, text="Authenticate")
 
 
+
+mainwindow.mainloop()
 #grabs deets for use later 
 async def login_logic():
     #authenticatates silly goofy little api thingie with the user 
