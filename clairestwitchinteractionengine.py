@@ -5,31 +5,11 @@ import customtkinter
 import tkinter
 import asyncio
 
-#i stole this code from customtikiter example code, i was too lazy to go and make my own, its 11 at night. let me cook.
-class Authenticatonwindow(customtkinter.CTkToplevel):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.geometry("400x300")
 
-        self.label = customtkinter.CTkLabel(self, text="ToplevelWindow")
-        self.label.pack(padx=20, pady=20)
-
-
-class mainwindow(customtkinter.CTk):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.geometry("1920x1028")
-        self.after(0, lambda:self.state('zoomed'))
-        self.title("Claire's Twitch Interaction Engine")
-        self.toplevel_window = Authenticatonwindow(self)
-
-
-        self.toplevel_window = None
+mainwindow = customtkinter.CTK()
 
 
 
-mainwindow = mainwindow()
-mainwindow.mainloop()
 
 #grabs deets for use later 
 async def login_engine():
