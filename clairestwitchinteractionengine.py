@@ -14,8 +14,7 @@ mainwindow.title("Claire's Twitch Interaction Engine")
 
 frame = customtkinter.CTkFrame(master=mainwindow, fg_color="transparent")
 frame.pack(pady=120, padx=120)
-frame._set_appearance_mode("dark")
-
+frame.place(relx=0.5, rely=0.5, relwidth=0.5, relheight=1, anchor="c")
 authbutton = customtkinter.CTkButton(master=frame, text="Authenticate")
 authbutton.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
