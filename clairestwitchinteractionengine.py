@@ -5,14 +5,15 @@ import customtkinter
 import tkinter
 import sv_ttk
 sv_ttk.set_theme("dark")
-
+def twitchlogin():
+    
 
 app = customtkinter.CTk()
 app.title("Claire's Twitch Interaction Engine")
 
 app.geometry("400x150")
 
-button = customtkinter.CTkButton(app, text="clairt", command=button_callback)
+button = customtkinter.CTkButton(app, text="Authenticate", command=)
 button.grid(row=0, column=0, padx=20, pady=20)
 
 app.mainloop()
