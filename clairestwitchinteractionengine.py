@@ -23,8 +23,9 @@ authwindow.title("Claire's Twitch Interaction Engine")
 authwindow.geometry("1920x1028")
 authwindow._state_before_windows_set_titlebar_color = 'zoomed'
 
-button = customtkinter.CTkButton(authwindow, text="Authenticate", command=login_logic)
-button.grid(row=0, column=0, padx=20, pady=20)
+authwindow.authbutton_frame = customtkinter.CTkFrame(authwindow)
+authwindow.button = customtkinter.CTkButton(authwindow, text="my button",)
+authwindow.button.grid(row=3, column=0, padx=898, pady=520, sticky="ew")
 
 authwindow.mainloop()
 
