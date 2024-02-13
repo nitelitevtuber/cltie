@@ -3,26 +3,24 @@ from twitchAPI.oauth import UserAuthenticator
 from twitchAPI.type import AuthScope
 import customtkinter
 import tkinter
-import asyncio
-
-customtkinter.set_appearance_mode("dark")
-mainwindow = customtkinter.CTk()
-mainwindow.geometry("1920x1028")
-mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
-mainwindow.title("Claire's Twitch Interaction Engine")
+import sv_ttk
+sv_ttk.set_theme("dark")
 
 
-frame = customtkinter.CTkFrame(master=mainwindow, fg_color="transparent")
-frame.pack(pady=120, padx=120)
-frame.place(relx=0.5, rely=0.5, relwidth=0.5, relheight=1, anchor="c")
-authbutton = customtkinter.CTkButton(master=frame, text="Authenticate")
-authbutton.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-text = customtkinter.CTkFrame(master=mainwindow, fg_color="transparent")
-text.pack(pady=120, padx=500)
-authmessage = customtkinter.CTkLabel(text, text = 'Please Authenticate with Twitch to continue.', font=('Segoe UI Bold', 30),)
-authmessage.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+app = customtkinter.CTk()
+app.title("Claire's Twitch Interaction Engine")
 
-mainwindow.mainloop()
+app.geometry("400x150")
+
+button = customtkinter.CTkButton(app, text="clairt", command=button_callback)
+button.grid(row=0, column=0, padx=20, pady=20)
+
+app.mainloop()
+
+
+
+
+
 #grabs deets for use later 
 async def login_logic():
     #authenticatates silly goofy little api thingie with the user 
