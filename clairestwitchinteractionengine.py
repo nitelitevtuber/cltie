@@ -3,7 +3,23 @@ from twitchAPI.oauth import UserAuthenticator
 from twitchAPI.type import AuthScope
 import customtkinter
 import tkinter
-import asyncio
+import sv_ttk
+
+def button_callback():
+    print("button pressed")
+
+app = customtkinter.CTk()
+app.title("my app")
+app.geometry("400x150")
+
+button = customtkinter.CTkButton(app, text="my button", command=button_callback)
+button.grid(row=0, column=0, padx=20, pady=20)
+
+app.mainloop()
+
+
+
+sv_ttk.set_theme("dark")
 
 #grabs deets for use later 
 async def login_logic():
