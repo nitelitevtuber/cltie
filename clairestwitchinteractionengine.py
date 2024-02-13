@@ -23,11 +23,9 @@ authwindow.title("Claire's Twitch Interaction Engine")
 authwindow.geometry("1920x1028")
 authwindow._state_before_windows_set_titlebar_color = 'zoomed'
 
-authwindow.authbutton_frame = customtkinter.CTkFrame(authwindow)
-authwindow.button = customtkinter.CTkButton(authwindow, text="my Authenticate",)
-authwindow.button.grid(row=3, column=0, padx=898, pady=520, sticky="ew")
-authwindow.authtextframe= customtkinter.CTkFrame(authwindow)
-label = customtkinter.CTkLabel(authwindow, text="CTkLabel", fg_color="transparent")
-authwindow.grid(row=0, column=0, padx=900, pady=520, sticky="ew")
+button = customtkinter.CTkButton(authwindow, text="my button",)
+button.grid(row=0, column=0, padx=890, pady=550, sticky="ew", columnspan=2)
+label = customtkinter.CTkLabel(authwindow, text="Please authenticate with Twitch to continue.", fg_color="transparent", font=("Segoe UI Bold", 50))
+label.grid(row=0, column=0, padx=930, pady=(0, 200), sticky="ew", columnspan=1)
 authwindow.mainloop()
 
