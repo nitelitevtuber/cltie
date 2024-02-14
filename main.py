@@ -1,8 +1,11 @@
 from twitchAPI.twitch import Twitch
 from twitchAPI.oauth import UserAuthenticator
 from twitchAPI.type import AuthScope
+from twitchAPI.oauth import UserAuthenticationStorageHelper
 import customtkinter
 import tkinter
+import asyncio
+
 
 
 
@@ -18,6 +21,10 @@ async def login_logic():
     # then adds in the user's specific details to allow actual use of Twitch's APIs.
     token, refresh_token = await auth.authenticate()
     await twitch.set_user_authentication(token, target_scope, refresh_token)
+    helper = UserAuthenticationStorageHelper(twitch, target_scope)
+
+def login_deez():
+    asyncio.run(login_logic())
 
 
 authwindow = customtkinter.CTk()
@@ -26,9 +33,9 @@ authwindow.geometry("1920x1028")
 authwindow._state_before_windows_set_titlebar_color = 'zoomed'
 
 #i know this code is spagetti, but it works, and thats all i care about 
-button = customtkinter.CTkButton(authwindow, text="Authenticate ", command=login_logic,)
+button = customtkinter.CTkButton(authwindow, text="Authenticate ", command=login_deez)
 button.grid(row=1, column=0, padx=0, pady=(0, 600))
-label = customtkinter.CTkLabel(authwindow, text="Please authenticate with Twitch to continue.", fg_color="transparent", font=("Segoe UI Bold", 30))
+label = customtkinter.CTkLabel(authwindow, text="Please authenticate with Twitch to continue.", fg_color="transparent", font=("Segoe UI Bold", 30),)
 label.grid_columnconfigure(0, weight=1)
 label.grid(row=0, column=0, padx=0, pady=(20, 0))
 authwindow.grid_rowconfigure(0, weight=1)
