@@ -24,6 +24,9 @@ async def login_logic():
     await twitch.set_user_authentication(token, target_scope, refresh_token)
     user = await first(twitch.get_users(logins=[MOMOCHANNEL]))
     helper = UserAuthenticationStorageHelper(twitch, target_scope)
+    await helper.bind()
+    await twitch.stop()
+
 
 def login_deez():
     asyncio.run(login_logic())
@@ -54,4 +57,3 @@ def mainwindow():
     mainwindow.title("Claire's Twitch Interaction Engine")
     mainwindow.geometry("1920x1028")
     mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
-    
