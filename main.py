@@ -10,7 +10,7 @@ import asyncio
 # grabs deets for use later 
 async def login_logic():
     # authenticates silly goofy little api thingie with the user
-    twitch = await Twitch('o958o6q8up44t8d4xlkxfqxid4f5bi', 'b1iha1fx3awubleroyxsxnslid6b4y')
+    twitch = await Twitch('', '')
     
     target_scope = [AuthScope.CHANNEL_MANAGE_REDEMPTIONS]
     auth = UserAuthenticator(twitch, target_scope, force_verify=False)
