@@ -25,8 +25,6 @@ async def login_logic():
     user = await first(twitch.get_users(logins=[MOMOCHANNEL]))
     helper = UserAuthenticationStorageHelper(twitch, target_scope)
     await helper.bind()
-    await twitch.stop()
-
 
 def login_deez():
     asyncio.run(login_logic())
