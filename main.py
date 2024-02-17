@@ -47,3 +47,11 @@ authwindow.grid_columnconfigure(0, weight=1)
 
 authwindow.mainloop()
 
+
+
+def mainwindow():
+    mainwindow = customtkinter.CTk()
+    mainwindow.title("Claire's Twitch Interaction Engine")
+    mainwindow.geometry("1920x1028")
+    mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
+    
