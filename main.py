@@ -20,6 +20,8 @@ async def login_logic():
     token, refresh_token = await auth.authenticate()
     await twitch.set_user_authentication(token, target_scope, refresh_token)
     helper = UserAuthenticationStorageHelper(twitch, target_scope)
+    user = await first(twitch.get_users())
+    print(user.to_dict())
     await helper.bind()
 
 def login_deez():
@@ -40,6 +42,7 @@ label.grid(row=0, column=0, padx=0, pady=(20, 0))
 authwindow.grid_rowconfigure(0, weight=1)
 authwindow.grid_rowconfigure(1, weight=1)
 authwindow.grid_columnconfigure(0, weight=1)
+authwindow.iconbitmap('momochoke.ico')
 
 
 authwindow.mainloop()
@@ -51,3 +54,5 @@ def mainwindow():
     mainwindow.title("Claire's Twitch Interaction Engine")
     mainwindow.geometry("1920x1028")
     mainwindow._state_before_windows_set_titlebar_color = 'zoomed'
+    mainwindow.iconbitmap('momochoke.ico')
+
