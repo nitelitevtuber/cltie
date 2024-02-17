@@ -7,9 +7,6 @@ import customtkinter
 import tkinter
 import asyncio
 
-
-MOMOCHANNEL = 'sushifuu'
-
 # grabs deets for use later 
 async def login_logic():
     # authenticates silly goofy little api thingie with the user
@@ -22,7 +19,6 @@ async def login_logic():
     # then adds in the user's specific details to allow actual use of Twitch's APIs.
     token, refresh_token = await auth.authenticate()
     await twitch.set_user_authentication(token, target_scope, refresh_token)
-    user = await first(twitch.get_users(logins=[MOMOCHANNEL]))
     helper = UserAuthenticationStorageHelper(twitch, target_scope)
     await helper.bind()
 
